@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Client</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color:#ebebeb">
+    <div class="container" style="background-color: white; height: 100%;">
+        <img class="img-fluid float-right mr-5 align-items-sm-start" src="css/image/vc.png" alt="Responsive image" height="70px" width="70px">
+        <div class="row-sm align-items-center">
+            <div class="col-md-4 col-lg-2 mt-5 float-left">
+                <button class="btn btn-success btn-circle" onclick= "openNav()">
+                    <i class="fa fa-bars" style="font-size: 45px;color:#c238eb"></i>
+                </button>
+            </div>
+            <div class="col-sm-10 float-right">
+                <div id="tittle" class="row-sm">
+                    <div class="d-sm-flex justify-content-sm-center align-items-sm-center float-left">
+                        <h2 id="Noption" class="text-white">Clientes</h2>
+                    </div>
+                </div>
+                <div class="row-sm mt-5">
+                    <div class="bd-body " style="background:#232323">
+                        <nav class="navbar navbar-expand-lg navbar-dark text-white-50 sticky-top">
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                    <a class="nav-item nav-link" href="#">Agregar clientes  <i class="fa fa-user-plus"></i></a>
+                                    <a class="nav-item nav-link" href="#">Editar <i class="fa fa-pencil"></i></a>
+                                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#emergent">Borrar  <i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                            <div class="form-group has-search">
+                                <span class="fa fa-search form-control-feedback"></span>
+                                <input id="myInput" type="text" class="form-control" style="border-radius: 0px 50px 50px 0px" placeholder="Search">
+                            </div>
+                        </nav>
+                        <table  id="Table" class="table table-borderless table-responsive-sm table-striped">
+                            <thead class="text-white" style="background-color:#232323">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">e-mail</th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable" style="background-color: white">
+                                <tr class="table-row" data-toggle="modal" data-target="#details">
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr class="table-row" data-toggle="modal" data-target="#details">
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr class="table-row" data-toggle="modal" data-target="#details">
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr class="table-row" data-toggle="modal" data-target="#details">
+                                    <th scope="row">4</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr class="table-row"data-toggle="modal" data-target="#details">
+                                    <th scope="row">5</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr class="table-row"data-toggle="modal" data-target="#details">
+                                    <th scope="row">6</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="text-decoration: none">&times;</a>
+        <a href="#" class="fa fa-home homebtn" style="text-decoration: none"></a>
+        <div class="justify-content-center text-center">
+            <a href="#" style="text-decoration: none">About</a>
+            <a href="#" style="text-decoration: none">Services</a>
+            <a href="#" style="text-decoration: none">Clients</a>
+            <a href="#" style="text-decoration: none">Contact</a> 
+        </div>
+    </div>
+
+    <div class="modal fade"some-other-attributes id="emergent" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="emergent-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">¿Quiere borrar cliente?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: #c238eb">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer justify-content-center" id="emergent-footer">
+                    <button type="button" class="btn btn-outline-light" data-dismiss="modal" style="background-color: #c238eb">Borrar</button>
+                    <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" some-other-attributes id="details">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content" id="content-modal">
+                <div class="modal-header" id="header-modal">
+                  <h1 class="modal-title">Detalles del Cliente</h1>
+                  <button type="button" class="close" data-dismiss="modal" style="color: #c238eb">×</button>
+                </div>
+                <div class="modal-body">
+                  <h3>Some text to enable scrolling..</h3>
+                  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+                  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> 
+                <div class="modal-footer justify-content-center" id="footer-modal">
+                  <button type="button" class="btn btn-lg btn-outline-light" data-dismiss="modal" style="background-color: #c238eb">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <script src="Dinamic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</body>
+</html>
